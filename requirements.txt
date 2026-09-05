@@ -1,0 +1,52 @@
+# ── Core LangChain ─────────────────────────────
+langchain
+langchain-core
+langchain-community          # BM25Retriever, misc community integrations
+
+# ── LLM providers ──────────────────────────────
+langchain-groq                # ChatGroq (vision + text generation)
+langchain-huggingface
+sentence-transformers           # HF-Embeddings (used in _get_vectorstore)
+
+# ── Vector store ───────────────────────────────
+langchain-chroma
+chromadb
+
+# ── Reranking ───────────────────────────────────
+langchain-cohere              # CohereRerank
+cohere
+
+# ── Sparse/hybrid search dependency ────────────
+rank-bm25                     # required under the hood by BM25Retriever
+
+# ── Docstore (Redis) ───────────────────────────
+redis                         # Python Redis client, used by get_docstore()
+
+# ── PDF parsing ─────────────────────────────────
+unstructured[pdf]
+pdf2image                     # unstructured's hi_res strategy depends on this
+pdfminer.six
+pikepdf
+
+# ── Image handling ──────────────────────────────
+pillow
+
+# ── API layer ────────────────────────────────────
+fastapi
+uvicorn[standard]
+python-multipart              # required for FastAPI file uploads (UploadFile)
+
+# ── Background jobs ──────────────────────────────
+celery
+# or: rq                       # pick one — Celery or RQ, not both
+
+# ── Reliability ─────────────────────────────────
+tenacity                      # retry/backoff around Groq calls (rate limits)
+
+# ── Evaluation & observability ──────────────────
+ragas
+langsmith
+
+# ── Config / env ─────────────────────────────────
+pydantic-settings             # for get_settings()
+python-dotenv

@@ -1,0 +1,8 @@
+.venv/
+.python-version
+pycache/
+src/
+*.pyc
+
+
+
