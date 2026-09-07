@@ -1,5 +1,5 @@
 # Use Python 3.12 base image
-FORM Python:3.12-slim
+FROM Python:3.12-slim
 
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
